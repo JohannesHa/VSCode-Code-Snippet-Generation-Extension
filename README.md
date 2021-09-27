@@ -12,9 +12,9 @@ Plug in any Code Generation model of your choice to receive Code Snippet Suggest
 
 ✅ GPT-3 for Code Generation
 
-⬜️ [GPT-J](https://github.com/kingoflolz/mesh-transformer-jax) for Code Generation
+✅ [Codex](https://openai.com/blog/openai-codex/)
 
-⬜️ [Codex](https://openai.com/blog/openai-codex/)
+⬜️ [GPT-J](https://github.com/kingoflolz/mesh-transformer-jax) for Code Generation
 
 ⬜️ Custom Code Generation Model Configuration
 
