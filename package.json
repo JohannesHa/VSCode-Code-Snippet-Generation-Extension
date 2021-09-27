@@ -1,0 +1,86 @@
+{
+	"enableProposedApi": true,
+	"name": "stackoverflowcodegenerator",
+	"displayName": "stackoverflowCodeGenerator",
+	"description": "",
+	"version": "0.0.1",
+	"publisher": "JohannesHagemann",
+	"engines": {
+		"vscode": "^1.60.0-insider"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:stackoverflowcodegenerator.helloWorld",
+		"onLanguage:python"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "stackoverflowcodegenerator.helloWorld",
+				"title": "Ask \"How-to\"-Question"
+			}
+		],
+		"configuration": {
+			"title": "Code Snippet Generator Settings",
+			"type": "object",
+			"properties": {
+				"stackoverflowcodegenerator.settings.codeGenerationModelChoice": {
+					"title": "Code Generation Model Choice",
+					"description": "Configure the Code Generation Model that should be used to generate your code snippet suggestions.",
+					"type": "string",
+					"default": "Standard Code Generation/Retrieval Model",
+					"enum": ["Standard Code Generation/Retrieval Model", "Contextualisation using GPT-3", "GPT-3 for Code Generation", "Codex for Code Generation", "Custom Model"],
+					"enumDescriptions": [
+					"Combines a State of the Art Code Generation Model and a Code Retrieval Model based on StackOverflow answers",
+					"Uses the Standard Code Generation/Retrieval Model and contextualizes the output according to your context using GPT-3",
+					"Uses GPT-3 for the Code Generation",
+					"Integrate your own Custom Code Generation Model!"
+					]
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production",
+		"postinstall": "npm run download-api",
+		"postdownload-api": "vscode-dts main",
+		"download-api": "vscode-dts dev",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"test-compile": "tsc -p ./",
+		"test-watch": "tsc -watch -p ./",
+		"pretest": "yarn run test-compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.58.0",
+		"@typescript-eslint/eslint-plugin": "^4.14.1",
+		"@typescript-eslint/parser": "^4.14.1",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"ts-loader": "^8.0.14",
+		"typescript": "^4.1.3",
+		"vscode-dts": "^0.3.1",
+		"vscode-test": "^1.5.0",
+		"webpack": "^5.19.0",
+		"webpack-cli": "^4.4.0"
+	},
+	"dependencies": {
+		"@types/dotenv": "^8.2.0",
+		"axios": "^0.21.1",
+		"cheerio": "^1.0.0-rc.10",
+		"dotenv": "^10.0.0",
+		"fuse.js": "^6.4.6",
+		"gpt-3-encoder": "file:custom_modules/gpt-3-encoder",
+		"openai-api": "^1.2.3"
+	}
+}

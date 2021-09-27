@@ -1,0 +1,51 @@
+{
+  "_from": "gpt-3-encoder@^1.1.3",
+  "_id": "gpt-3-encoder@1.1.3",
+  "_inBundle": false,
+  "_integrity": "sha512-Ep1+I5hQ5VcLF5qKc2FyqvSj2T0Al9LNC0uXNq6Cx0Twl6Gq2RWG7Q5Mo/9Of30xcAegsgemNtuulPEiwanUww==",
+  "_location": "/gpt-3-encoder",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "gpt-3-encoder@^1.1.3",
+    "name": "gpt-3-encoder",
+    "escapedName": "gpt-3-encoder",
+    "rawSpec": "^1.1.3",
+    "saveSpec": null,
+    "fetchSpec": "^1.1.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gpt-3-encoder/-/gpt-3-encoder-1.1.3.tgz",
+  "_shasum": "d964075bc89b10c997e550173fcfdd74a2cbd6ec",
+  "_spec": "gpt-3-encoder@^1.1.3",
+  "_where": "/Users/johannes/Documents/randomProjects/stackoverflowcodegenerator",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/AIDungeon/GPT-3-Encoder/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Javascript BPE Encoder Decoder for GPT-2 / GPT-3",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
+  "files": [
+    "encoder.json",
+    "vocab.bpe"
+  ],
+  "homepage": "https://github.com/AIDungeon/GPT-3-Encoder#readme",
+  "license": "MIT",
+  "main": "Encoder.js",
+  "name": "gpt-3-encoder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AIDungeon/GPT-3-Encoder.git"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "version": "1.1.3"
+}
