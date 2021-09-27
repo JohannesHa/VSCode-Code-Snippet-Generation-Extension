@@ -3,7 +3,7 @@
 This VSCode Extension provides a similar user experience to [Github CoPilot](https://copilot.github.com/) with the addition that you can select your preferred Code Generation Model.
 Plug in any Code Generation model of your choice to receive Code Snippet Suggestions or use one of the provided models.
 
-![Code Generation Get Request Demo](https://github.com/JohannesHa/VSCode-Code-Snippet-Generator/blob/master/media/code-generation-get-request-demo.gif?raw=true)
+![Code Generation Get Request Demo](https://github.com/JohannesHa/VSCode-Code-Snippet-Generation-Extension/blob/master/media/code-generation-get-request-demo.gif?raw=true)
 
 ### Currently supported Code Generation Models:
 ✅ A [Standard Code Generation Model](https://github.com/neulab/external-knowledge-codegen) + Code Retrieval Model based on Xing and StackOverflow Results
@@ -24,7 +24,7 @@ All of those models only support Python at the moment, but some of them are quit
 
 ## Installation
 - If you don't have it yet, download [VSCode Insiders](https://code.visualstudio.com/insiders/)
-- Git clone the repo: `git clone https://github.com/JohannesHa/VSCode-Code-Snippet-Generator`
+- Git clone the repo: `git clone https://github.com/JohannesHa/VSCode-Code-Snippet-Generation-Extension`
 - Run `yarn` inside the repository
 - Open the repo in VSCode Insiders (e.g. via `code-insiders .`) 
 - Copy the `.env.example` file and create a `.env` file. Replace the variables in this file with your access keys.
@@ -58,7 +58,7 @@ There are two options to request code suggestions from the extension:
 
 ### Keyboard Shortcuts
 To enable the keyboard shortcuts for the inline suggestions, go to `Code - Insiders > Preferences > Keyboard Shortcuts` and type in `inlinesuggest`. Change the settings there to the following:
-![code-suggestion-keyboard-shortcut-settings](https://github.com/JohannesHa/VSCode-Code-Snippet-Generator/blob/master/media/code-suggestion-keyboard-shortcut-settings.png?raw=true)
+![code-suggestion-keyboard-shortcut-settings](https://github.com/JohannesHa/VSCode-Code-Snippet-Generation-Extension/blob/master/media/code-suggestion-keyboard-shortcut-settings.png?raw=true)
 
 
 
