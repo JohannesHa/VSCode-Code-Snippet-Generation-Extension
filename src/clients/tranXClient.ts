@@ -18,12 +18,8 @@ export class TranXClient {
     static async getCandidates(query: string) {
         try {
             const results = await this.sendData(query);
-
             let tranXResults = results.data.hypotheses
-
             let tranXResultsTop5 = tranXResults.slice(0, 5);
-
-            console.log("tranXResultsTop5 ", tranXResultsTop5);
 
             let tranXItems = []
 

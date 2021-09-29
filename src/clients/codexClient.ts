@@ -17,18 +17,18 @@ export class CodexClient {
         Returns the codex generated code snippet 
     */
         static async getCodeSnippets(context, query) {
-
+            const converted_query = "\"\"\"" + query + "\"\"\""
             const prompt =
                 "# Python 3 \n" + 
                 context +
                 "\n\n //" +
-                query + 
+                converted_query + 
                 "\n"
     
             const gptResponse = await openai.complete({
                 engine: 'davinci-codex',
                 prompt,
-                max_tokens: 64,
+                max_tokens: 120,
                 temperature: 0.1,
                 topP: 1,
                 n: 3,
@@ -40,8 +40,6 @@ export class CodexClient {
 
             const codeSnippetTexts = gptResponse.data.choices.map(choice => choice.text)
             const codeSnippetItems = codeSnippetTexts.map(text => new CodexItem(text))
-
-            console.log("codeSnippets ", codeSnippetItems)
     
             return codeSnippetItems
         }

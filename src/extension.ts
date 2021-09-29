@@ -39,7 +39,7 @@ export async function activate(context: vscode.ExtensionContext) {
 				let rs;
 
 				try {
-					rs = await getCodeSnippetResults(searchPhrase)
+					rs = await getCodeSnippetResults(searchPhrase.replace("//", ""))
 				} catch (err) {
 					vscode.window.showErrorMessage(err.toString());
 					return { items: [] };

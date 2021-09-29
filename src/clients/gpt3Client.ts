@@ -28,7 +28,7 @@ export class GPT3Client {
                 "CoPilot:\n";
     
             const gptResponse = await openai.complete({
-                engine: 'curie',
+                engine: 'davinci',
                 prompt,
                 max_tokens: 64,
                 temperature: 0.1,
@@ -42,8 +42,6 @@ export class GPT3Client {
 
             const codeSnippetTexts = gptResponse.data.choices.map(choice => choice.text)
             const codeSnippetItems = codeSnippetTexts.map(text => new GPT3Item(text))
-
-            console.log("codeSnippets ", codeSnippetItems)
     
             return codeSnippetItems
         }
@@ -71,7 +69,7 @@ export class GPT3Client {
         const maxTokens = encodedCodeSnippet.length + buffer
 
         const gptResponse = await openai.complete({
-            engine: 'curie',
+            engine: 'davinci',
             prompt,
             max_tokens: maxTokens,
             temperature: 0.1,
