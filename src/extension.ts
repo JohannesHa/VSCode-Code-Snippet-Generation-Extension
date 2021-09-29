@@ -34,8 +34,6 @@ export async function activate(context: vscode.ExtensionContext) {
 			let searchPhrase = Utils.matchPhrase(textBeforeCursor);
 
 			if (searchPhrase) {
-				console.log("searchPhrase matches!!!")
-
 				let rs;
 
 				try {
@@ -51,7 +49,6 @@ export async function activate(context: vscode.ExtensionContext) {
 
 				const items = new Array<CustomInlineCompletionItem>();
 
-				console.log("before output loop")
 				rs.forEach((item, i) => {
 					let output;
 					const newLine = "\n"
@@ -61,8 +58,6 @@ export async function activate(context: vscode.ExtensionContext) {
 					else {
 						output = " " + item.label + newLine + item.detail
 					}
-
-					console.log("ouput: ", output)
 
 					items.push({
 						text: output,
@@ -92,7 +87,6 @@ export async function activate(context: vscode.ExtensionContext) {
 		}
 		
 		const results = await getCodeSnippetResults(query)
-		console.log("after getCodeSnippetResults: ", results)
 
 		if (results.length > 0) {
 
@@ -147,11 +141,7 @@ async function getCodeSnippetResults(query) {
 async function getDefaultCodeRetrievalAndGenerationResults(query: string) {
 
 	const tranx_results = await TranXClient.getCandidates(query)
-	console.log("tranx_results: ", tranx_results)
-
 	const stackoverflowsearch_results = await StackoverflowClient.getCandidates(query)
-	console.log("stackoverflowsearch_results: ", stackoverflowsearch_results)
-
 	const all_results = tranx_results.concat(stackoverflowsearch_results)
 
 	return all_results
@@ -171,8 +161,6 @@ function getContext() {
 		const linePosition = position.line
 
 		const contextOfLast5LinesOfCode = Utils.getLastNLinesOfFromCurrentPosition(docContent, linePosition, 5)
-
-		console.log("contextOfLast5LinesOfCode ", contextOfLast5LinesOfCode)
 
 		return contextOfLast5LinesOfCode
 	}
@@ -195,7 +183,6 @@ async function getGPT3ContextualisedResults(results) {
 	}
 
 	const contextualised_results = await contextualisedResults()
-	console.log("contextualised_results ", contextualised_results)
 	return contextualised_results
 
 }
