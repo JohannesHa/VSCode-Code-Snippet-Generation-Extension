@@ -36,12 +36,12 @@ There are two options to request code suggestions from the extension:
 
 **1. Quick Pick Search**
 
-- Start VSCod Quick Pick via `CMD+SHIFT+P`
+- Start VSCode Quick Pick via `CMD+SHIFT+P`
 - Type in: `Ask "How-to"-Question` and click Enter
 - Type in your Natural Language Intent and click Enter
 - Choose one of the results of the Code Generation Model and it will be pasted in your code.
 
-// add gif 
+![Extension Option 1 Demo](https://github.com/JohannesHa/VSCode-Code-Snippet-Generation-Extension/blob/master/media/extension-option-1.gif?raw=true)
 
 **2. Inline Code Suggestions**
 
@@ -52,7 +52,7 @@ There are two options to request code suggestions from the extension:
 //read a csv file.
 ```
 
-// add gif
+![Extension Option 2 Demo](https://github.com/JohannesHa/VSCode-Code-Snippet-Generation-Extension/blob/master/media/extension-option-2.gif?raw=true)
 
 ## Additional Configurations
 
