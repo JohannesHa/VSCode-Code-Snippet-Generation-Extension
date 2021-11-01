@@ -8,11 +8,6 @@ import { TranXClient, TranXItem } from './clients/tranXClient';
 import Utils from './helpers/utils';
 import { getConfig } from "./config";
 
-const options = {
-	includeScore: true,
-	keys: ['title']
-}
-
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export async function activate(context: vscode.ExtensionContext) {
@@ -52,7 +47,7 @@ export async function activate(context: vscode.ExtensionContext) {
 				rs.forEach((item, i) => {
 					let output;
 					const newLine = "\n"
-					if (item instanceof TranXItem || item instanceof GPT3Item|| item instanceof CodexItem) {
+					if (item instanceof TranXItem || item instanceof GPT3Item || item instanceof CodexItem) {
 						output = newLine + item.label
 					}
 					else {
@@ -85,7 +80,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		if (!query || !editor) {
 			return;
 		}
-		
+
 		const results = await getCodeSnippetResults(query)
 
 		if (results.length > 0) {
@@ -93,10 +88,10 @@ export async function activate(context: vscode.ExtensionContext) {
 			const selectedAnswer = await vscode.window.showQuickPick<vscode.QuickPickItem>(results);
 
 			if (selectedAnswer) {
-				if (selectedAnswer instanceof TranXItem || selectedAnswer instanceof GPT3Item|| selectedAnswer instanceof CodexItem) {
+				if (selectedAnswer instanceof TranXItem || selectedAnswer instanceof GPT3Item || selectedAnswer instanceof CodexItem) {
 					editor.insertSnippet(new vscode.SnippetString(selectedAnswer.label));
 				}
-				else if (selectedAnswer instanceof StackoverflowItem){
+				else if (selectedAnswer instanceof StackoverflowItem) {
 					editor.insertSnippet(new vscode.SnippetString(selectedAnswer.detail));
 				}
 			}

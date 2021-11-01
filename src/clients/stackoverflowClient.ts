@@ -12,7 +12,7 @@ export class StackoverflowClient {
             sort: "votes",
             pagesize: "10",
             filter: "withbody",
-            site: "stackoverflow"
+            site: "stackoverflow",
         };
 
         const { qIds, postTitles } = await BingSearchClient.getQuestionIDsAndTitles(query)
@@ -29,22 +29,15 @@ export class StackoverflowClient {
     static async getCandidates(query: string) {
         try {
             const results = await this.sendData(query);
-            console.log("results of getCandidates: ", results)
             const answers = results.response.data.items.map(item => item.body)
-            console.log("answers: ", answers)
             const answersTop5 = answers.slice(0, 5);
             const answers_DOM = answersTop5.map(answer => {
                 return cheerio.load(answer);
             })
-            console.log("answers_DOM: ", answers_DOM)
             const codeSnippetStrings = answers_DOM.map(answer => answer("code", "pre").text())
-
-            console.log("unprocessed code snippets: ", codeSnippetStrings)
 
             // clean code snippets
             const processedCodeSnippetStrings = codeSnippetStrings.map(snippet => repair_program_io(snippet))
-
-            console.log("processed code snippets: ", processedCodeSnippetStrings)
 
             let stackoverflowItems = []
 

@@ -24,10 +24,7 @@ export class BingSearchClient {
     static async getQuestionIDsAndTitles(buf: string) {
         try {
             let results = await this.bingWebSearch(buf);
-            console.log("results of bing search: ", results)
             let links = results.data.webPages.value.map(value => value["url"])
-            console.log("links: ", links)
-
             let qIds = []
 
             links.forEach(link => {
@@ -35,8 +32,6 @@ export class BingSearchClient {
                     qIds.push(link.split("/")[4])
                 }
             });
-
-            console.log("quids: ", qIds)
 
             const urlTitles = results.data.webPages.value.map(value => value["name"])
             const postTitles = []

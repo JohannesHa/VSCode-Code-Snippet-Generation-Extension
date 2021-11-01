@@ -5,6 +5,8 @@ Plug in any Code Generation model of your choice to receive Code Snippet Suggest
 
 ![Code Generation Get Request Demo](https://github.com/JohannesHa/VSCode-Code-Snippet-Generation-Extension/blob/master/media/code-generation-get-request-demo.gif?raw=true)
 
+[Paper coming soon!]
+
 ### Currently supported Code Generation Models:
 ✅ A [Standard Code Generation Model](https://github.com/neulab/external-knowledge-codegen) + Code Retrieval Model based on Xing and StackOverflow Results
 

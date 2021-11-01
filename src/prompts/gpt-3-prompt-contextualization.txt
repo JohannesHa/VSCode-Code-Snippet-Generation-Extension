@@ -1,0 +1,95 @@
+Replace variables in Python Code Snippet (Unprocessed) with 
+the context of the Program:
+
+Program:
+file_to_download="sales_of_january.csv"
+Unprocessed:
+import pandas as pd
+data = pd.read_csv('https://example.com/passkey=wedsmdjsjmdd')
+Processed:
+import pandas as pd
+data = pd.read_csv(file_to_download)
+
+Program:
+fruits = ["apple", "banana", "cherry"]
+new_fruit = "mango"
+Unprocessed:
+list.append(2)
+Processed:
+fruits.append(new_fruit)
+
+Program:
+hostUrl = "http://localhost:8081/parse/conala"
+parameters = {
+	q: query
+};
+Unprocessed:
+requests.get(url, params=params)
+Processed:
+requests.get(hostUrl, params=parameters)
+
+Program:
+params = {
+	q: query
+};
+randomUrl = "https://example.com"
+Unprocessed:
+requests.get(url, params=parameters)
+Processed:
+requests.get(randomUrl, params=parameters)
+
+Program:
+d1 = {'a': 1, 'b': 2}
+d2 = {'b': 10, 'c': 11}
+Unprocessed:
+z = x | y
+Processed:
+z = d1 | d2
+
+Program:
+prompt_for_email = "Please enter your email"
+Unprocessed:
+text = input("prompt")
+Processed:
+text = input(prompt_for_email)
+
+Program:
+file_to_open = "earnings_Q2_20.xlsm" 
+Unprocessed:
+import os.path
+os.path.isfile(fname)
+Processed:
+import os.path
+os.path.isfile(file_to_open)
+
+Program:
+colors = ['red', 'blue', 'green']
+favoriteColor = 'red'
+Unprocessed:
+list[-1]
+Processed:
+colors[-1]
+
+Program:
+new_list = list()
+Unprocessed:
+if len(li) == 0:
+    print('the list is empty')
+Processed:
+if len(new_list) == 0:
+    print('the list is empty')
+
+Program:
+old_list = [1,2,3,4,5,6]
+Unprocessed:
+lst2=lst1[:]
+Processed:
+new_list = old_list[:]
+
+Program:
+list1 = [23,65,23,75,23]
+list2 = [245,95,122,1,98]
+Unprocessed:
+c = [x+y for x,y in zip(a, b)]
+Processed:
+sum_of_lists = [x+y for x,y in zip(list1, list2)]

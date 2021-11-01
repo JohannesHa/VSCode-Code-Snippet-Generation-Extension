@@ -1,0 +1,123 @@
+CoPilot is a chatbot that helps software developers write code. 
+It takes a natural language intent NLI and answers in the 
+Python programming language.
+
+Program:
+file_to_download="sales_of_january.csv"
+NLI:
+Read the data of the csv file
+CoPilot:
+import pandas as pd
+data = pd.read_csv(file_to_download)
+
+Program:
+fruits = ["apple", "banana", "cherry"]
+new_fruit = "mango"
+NLI:
+Append new fruit to list of fruits
+CoPilot:
+fruits.append(new_fruit)
+
+Program:
+const hostUrl = "http://localhost:8081/parse/conala"
+const parameters = {
+	q: query
+};
+NLI:
+Make a get request with parameters
+CoPilot:
+requests.get(hostUrl, params=parameters)
+
+Program:
+const params = {
+	q: query
+};
+const randomUrl = "https://example.com"
+NLI:
+Make a get request with parameters
+CoPilot:
+import requests
+requests.get(randomUrl, params=parameters)
+
+Program:
+csvFile = "./data.csv"
+NLI:
+Read the data of the csv file
+CoPilot:
+import pandas as pd
+data = pd.read_csv(csvFile)
+
+Program:
+d1 = {'a': 1, 'b': 2}
+d2 = {'b': 10, 'c': 11}
+NLI: 
+Merge two dictionaries
+CoPilot:
+z = d1 | d2
+
+Program:
+prompt_for_email = "Please enter your email"
+NLI: 
+Request user input from command line
+CoPilot:
+text = input(prompt_for_email)
+
+Program:
+file_to_open = "earnings_Q2_20.xlsm"
+NLI:
+Check if file exists
+CoPilot:
+import os.path
+os.path.isfile(file_to_open)
+
+Program:
+colors = ['red', 'blue', 'green']
+favoriteColor = 'red'
+NLI:
+Get last item of list
+CoPilot:
+colors[-1]
+
+Program:
+new_list = list()
+NLI:
+Check if list is empty
+CoPilot:
+if len(new_list) == 0:
+    print('the list is empty')
+
+Program:
+old_list = [1,2,3,4,5,6]
+NLI:
+Clone list
+CoPilot:
+new_list = old_list[:]
+
+Program:
+list1 = [23,65,23,75,23]
+list2 = [245,95,122,1,98]
+NLI:
+Sum elements in two lists
+CoPilot:
+sum_of_lists = [x+y for x,y in zip(list1, list2)]
+
+Program:
+cars = ["Ford", "Volvo", "BMW"]
+NLI:
+Sort list
+CoPilot:
+cars.sort()
+
+Program:
+my_list = [1,1,3,5,5]
+NLI:
+Find duplicate in list
+CoPilot:
+duplicates = [x for x in my_list if x in my_list]
+
+Program:
+name = "Mamma"
+NLI:
+Check if palindrome
+CoPilot:
+palindrome = name == name[::-1]
